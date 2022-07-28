@@ -1,0 +1,73 @@
+<!--pages/repairOrder/repairOrder.wxml-->
+<!-- 分为我要接单和我要请假 -->
+<view class="topBlock">
+  <view data-id="0" bindtap="changeTabbar" class="topBlock-item {{index == 0 ? 'cell-active' : ''}}">
+    <text class="tabText">我要工作</text>
+  </view>
+  <view data-id="1" bindtap="changeTabbar" class="topBlock-item {{index == 1 ? 'cell-active' : ''}}">
+    <text class="tabText">我要请假</text>
+  </view>
+</view>
+  <view class="{{index == 0 ? '' : 'cell-hide'}}">
+  <view style="margin-top: 20rpx;">新订单：</view>
+    <view class="newOrder">
+    
+      <view class="orderText" wx:for="{{newOrdersList}}" wx:key="index">
+        <view class="orderBlock">
+          <view class="ordText">
+            <view>地址:{{item.orderAddress}}</view>
+            <view>问题:{{item.orderDescription}}</view>
+            <view>合适时间:{{item.suitableTime}}</view>
+            <view>订单号:{{item.orderId}}</view>
+          </view>
+          <view class="jiedanBtn">
+            <button class="btn1" data-id="{{index}}" bindtap="accept">接单</button>
+            <button class="btn2"  data-id="{{index}}" bindtap="refuse">拒绝</button>
+          </view>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+
+  <view class="{{index == 1 ? '' : 'cell-hide'}}">
+    <view class="detailBlock">
+      <view class="space1"></view>
+      <view class="detail">
+        <view class="detail1">请假日期:</view> 
+        <textarea class="detail2" name="holidayTime" id="person" bindinput="setHolidayTime" value="{{holidayTime}}"></textarea>
+      </view>
+      <view class="detail">
+        <view class="detail1">请假原因:</view> 
+        
+      </view>
+      <view class="detail"> 
+        <textarea class="queArea" name="holidayReason" id="quesDescription" cols="30" rows="10" placeholder="请在此填写请假原因" bindinput="setHolidayReason" value="{{holidayReason}}">
+        </textarea>
+      </view>
+
+      <view class="btn-area">
+        <button class="btn1" style="margin: 30rpx 0" formType="submit" bindtap="commit">提交</button>
+        <button class="btn2" style="margin: 30rpx 0" formType="reset" bindtap="reset">重置</button>
+      </view>
+    </view>
+
+    <view style="text-align: right;margin-right: 50rpx;" bindtap="changeToRecord">提交记录</view>
+
+  </view>
+<view>
+  
+  <!-- 接单则传回参数：维修员id，接单时间，订单当前状态改为3
+  点击后让该订单消失，显示暂无订单 -->
+  
+  <!-- 跳出一个文本框，写拒绝原因，有一个提交按钮 -->
+  <!-- 可能要写一个新的拒绝类 -->
+  <!-- 简单点就直接拒绝按钮，修改数据表中维修员id为null，修改状态为1 -->
+</view>
+
+<!-- 请假跳转新页面（还没建 -->
+<!-- 这可能也要一个新类 -->
+<!-- 包括维修员id,请假开始时间和结束时间，如果当前时间在中间，则在维修员下拉框中不显示
+申请表：请假时间，请假原因，开始时间，结束时间
+提交后，写入数据库
+管理员同意后，请假类的同意属性改为0,1为未同意，管理员的新通知数量即状态为1的订单数量+状态为1的请假数量 -->

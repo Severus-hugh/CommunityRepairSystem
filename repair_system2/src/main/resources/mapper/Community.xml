@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+mapper标签：试试数据库表映射最外层标签
+namespace：指定接口的全路径名(包名+类名)
+-->
+<mapper namespace="com.repair.repair_system2.mapper.CommunityMapper">
+    <!--
+    select查询操作标签
+    id属性：对应接口中方法名，必填项、且在同一个namespace，ID不能重复
+    #{XXX}:占位符 里面填写的是方法中的参数名
+    parameterType属性：指定入参类型
+    resultType属性：执行返回参数类型 指定全路径名
+    -->
+    <update id="update" >
+        update community
+        <set>
+            <if test="communityName != null">
+                communityName = #{communityName},
+            </if>
+            <if test="communityAddress != null">
+                communityAddress = #{communityAddress},
+            </if>
+            <if test="startTime != null">
+                startTime = #{startTime},
+            </if>
+            <if test="finishTime != null">
+                finishTime = #{finishTime}
+            </if>
+        </set>
+        <where>
+            communityId = #{communityId}
+        </where>
+
+    </update>
+</mapper>

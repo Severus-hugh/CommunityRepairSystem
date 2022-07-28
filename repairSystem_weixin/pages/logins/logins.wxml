@@ -1,0 +1,4 @@
+<!--pages/logins/logins.wxml-->
+<view class="statusSelect">请选择登录身份:</view>
+<button class="residentBtn" bindtap="residentSelect" type="primary">居民登录</button>
+<button bindtap="repairmanSelect" type="primary">维修员登录</button>

@@ -1,0 +1,19 @@
+<!--pages/message/message.wxml-->
+<view>
+  <view class="notice">通 知</view>
+  <view wx:for="{{messageList}}" wx:key="{{index}}">
+    <view class="message">
+    <view class="messageTitle">
+      {{item.title}}
+    </view>
+    <view class="messageContent">
+      {{item.content}}
+    </view>
+    <view class="messageTime">
+      {{item.announceTime}}
+    </view>
+  </view>
+  </view>
+  
+  
+</view> 

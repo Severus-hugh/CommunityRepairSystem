@@ -1,0 +1,27 @@
+<!--pages/unlock/unlock.wxml-->
+<view class="topBlock">
+  <view data-id="0" bindtap="changeTabbar" class="topBlock-item {{index == 0 ? 'cell-active' : ''}}">
+    <text class="tabText">公司</text>
+  </view>
+  <view data-id="1" bindtap="changeTabbar" class="topBlock-item {{index == 1 ? 'cell-active' : ''}}">
+    <text class="tabText">价格</text>
+  </view>
+</view>
+<view class="{{index == 0 ? '' : 'cell-hide'}}">
+  <view class="listBlock">
+    <view class="cList" wx:for="{{companyList}}" wx:key="index">
+      <image class="unComImg" src="../../images/unlockCompany.png"></image>
+      <view class="imgText">
+        <view>{{item.companyName}}</view>
+        <text class="telText" user-select="true">联系方式:{{item.companyTel}}</text>
+      </view>
+    </view>
+    <view>
+    </view>
+  </view>
+</view>
+ <view class="{{index == 1 ? '' : 'cell-hide'}}">
+  <image class="unlockImg" mode="widthFix" src="../../images/unclockprice.png"></image>
+</view> 
+
+

@@ -1,0 +1,15 @@
+<!--pages/complaintOne/complaintOne.wxml-->
+<view class="detailBlock">
+  <view class="space1"></view>
+  <view class="detail">
+    <view class="detail1">投诉维修员编号:{{repairmanId}}</view> 
+  </view>
+  <view class="detail"> 
+    <textarea class="queArea" name="question" id="quesDescription" cols="30" rows="10" placeholder="请在此填写投诉内容" bindinput="complaintText" value="{{complaint}}">
+    </textarea>
+  </view>
+  <view class="btn-area">
+    <button class="btn1" style="margin: 30rpx 0" formType="submit" bindtap="commit">提交</button>
+    <button class="btn2" style="margin: 30rpx 0" formType="reset" bindtap="reset">重置</button>
+  </view>
+</view>

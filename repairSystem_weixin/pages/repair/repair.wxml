@@ -1,0 +1,73 @@
+<!--pages/repair/repair.wxml
+<view class="title">我要报修</view>-->
+
+<view class="topBlock">
+  <view><image class="iconImg" src="../../images/person.png"></image></view>
+  <text class="nickName">欢迎您，{{wxNickname}}</text>
+</view>
+
+<view class="line"></view>
+
+<view class="detailBlock">
+    <view class="space1"></view>
+    <view class="detail">
+      <view class="detail1">联系人</view> 
+      <textarea class="detail2" name="person" bindinput="commitPerson" value="{{person}}"></textarea>
+    </view>
+    <view class="detail">
+      <view class="detail1">报修小区</view> 
+      <!-- 下拉框 -->
+      <view class="search-bar">
+        <view class="condition" bindtap="showCommunity">
+            <view class="select-condition">{{choosedCommunity.title}}</view>
+            <view class="trigger {{ communityVisible ? 'reverse' : ''}}"></view>
+            <cover-view class="option-list" style="height: {{communityVisible ? '300rpx': '0'}}">
+                <cover-view bindtap="onChnageCommunity" data-id="{{item.communityId}}" class="list-item" wx:for="{{communityList}}" wx:key="index" wx:for-index="index">
+                    <cover-view class="title">{{item.communityName}}</cover-view>
+                    <cover-view class="title" wx:if="{{item.select}}">√</cover-view>
+                </cover-view>
+            </cover-view>
+        </view>
+      </view>
+      <!-- 下拉框结束 -->
+    </view>
+    <view class="detail">
+      <view class="detail1">详细地址</view> 
+      <textarea class="detail2" name="address" bindinput="commitAddress" value="{{address}}"></textarea>
+    </view>
+    <view class="detail">
+      <view class="detail1">维修时间</view> 
+      <textarea class="detail2" name="reptime" bindinput="commitReptime" value="{{reptime}}"></textarea>
+    </view>
+    <view class="detail">
+      <view class="detail1">联系方式</view>
+      <textarea class="detail2" name="tel" bindinput="commitTel" value="{{tel}}"></textarea>
+    </view>
+    
+    <view class="detail">
+      <view class="detail1">问题类型</view>
+      <!-- 下拉框 -->
+      <view class="search-bar">
+        <view class="condition" bindtap="showCondition">
+            <view class="select-condition">{{choosedCondition.title}}</view>
+            <view class="trigger {{ conditionVisible ? 'reverse' : ''}}"></view>
+            <cover-view class="option-list" style="height: {{conditionVisible ? '550rpx': '0'}}">
+                <cover-view bindtap="onChnageCondition" data-id="{{item.id}}" class="list-item" wx:for="{{conditionList}}" wx:key="index" wx:for-index="index">
+                    <cover-view class="title">{{item.title}}</cover-view>
+                    <cover-view class="title" wx:if="{{item.select}}">√</cover-view>
+                </cover-view>
+            </cover-view>
+        </view>
+    </view>
+      <!-- <textarea class="detail2" name="ques" ></textarea> -->
+    </view>
+    <view class="detail"> 
+      <textarea class="queArea" name="question" cols="30" rows="10" placeholder="请详细描述问题" bindinput="commitQues" value="{{question}}">
+      </textarea>
+    </view>
+
+    <view class="btn-area">
+          <button class="btn1" style="margin: 30rpx 0" formType="submit" bindtap="commit">提交</button>
+          <button class="btn2" style="margin: 30rpx 0" formType="reset" bindtap="reset">重置</button>
+    </view>
+</view>

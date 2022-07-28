@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml
+  登录页面——授权登录/注册登录;不登录无法使用
+-->
+<view class="container">
+  <view class="userinfo">
+    <block>
+      <image class="weixinImg" src="../../images/weixin.png" mode="widthFix"></image>
+    </block>
+    <button class="shouquanBtn" type="primary" bindtap="getUI">授权登录</button>
+    
+  </view> 
+</view>
+

@@ -1,0 +1,69 @@
+{
+  "pages": [
+    
+    
+
+    "pages/login/login",
+    
+    "pages/logins/logins",
+    "pages/indexs/indexs",
+    "pages/orders/orders",
+    "pages/mine/mine",
+    "pages/unlock/unlock",
+    "pages/repair/repair",
+    "pages/message/message",
+    "pages/complaint/complaint",
+    "pages/complaintOne/complaintOne",
+    "pages/repairOrder/repairOrder",
+    "pages/historyOrder/historyOrder",
+    "pages/holiday/holiday",
+
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffb765",
+    "navigationBarTitleText": "西德报修中心",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/indexs/indexs",
+        "text": "我要报修",
+        "iconPath": "/images/repair.png",
+        "selectedIconPath": "/images/repairSelected.png"
+      },
+      {
+        "pagePath": "pages/orders/orders",
+        "text": "报修订单",
+        "iconPath": "/images/order.png",
+        "selectedIconPath": "/images/orderSelected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "/images/mine.png",
+        "selectedIconPath": "/images/mineSelected.png"
+      },
+      {
+        "pagePath": "pages/repairOrder/repairOrder",
+        "text": "维修订单",
+        "iconPath": "/images/dealingOrders.png",
+        "selectedIconPath": "/images/dealingOrdersSelected.png"
+      },
+      {
+        "pagePath": "pages/historyOrder/historyOrder",
+        "text": "历史订单",
+        "iconPath": "/images/finishOrderSelected.png",
+        "selectedIconPath": "/images/finishOrder.png"
+      }
+  ],
+  "selectedColor":"#ff9e30"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {}
+}

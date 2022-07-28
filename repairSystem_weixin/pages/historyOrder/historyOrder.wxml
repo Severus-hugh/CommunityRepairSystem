@@ -1,0 +1,41 @@
+<!--pages/historyOrder/historyOrder.wxml-->
+<!-- 分已接单和全部订单
+传入参数：维修员id和订单状态
+已接单3 -->
+<view class="topBlock">
+  <view data-id="0" bindtap="changeTabbar" class="topBlock-item {{index == 0 ? 'cell-active' : ''}}">
+    <text class="tabText">已接单</text>
+  </view>
+  <view data-id="1" bindtap="changeTabbar" class="topBlock-item {{index == 1 ? 'cell-active' : ''}}">
+    <text class="tabText">全部订单</text>
+  </view>
+</view>
+
+<view class="{{index == 0 ? '' : 'cell-hide'}}">
+  <view wx:for="{{orderList}}" wx:key="index" class="orderBlock">
+    <view class="orderText">
+      <view class="space"></view>
+      <view>订单编号:{{item.orderId}}</view>
+      <view>详细地址:{{item.orderAddress}}</view>
+      <view>问题描述:{{item.orderDescription}}</view>
+      <view>联系电话:{{item.contactTel}}</view>
+      <view>建议维修时间:{{item.suitableTime}}</view>
+    </view>
+    <view>
+      <image src="../../images/rightOrange.png"  data-id="{{index}}" class="arrowImg" bindtap="accept"></image>
+    </view>
+  </view>
+</view>
+
+<view class="{{index == 1 ? '' : 'cell-hide'}}">
+  <view wx:for="{{historyList}}" wx:key="index" class="ordersBlock">
+    <view class="orderText">
+      <view class="space"></view>
+      <view>订单编号:{{item.orderId}}</view>
+      <view>详细地址:{{item.orderAddress}}</view>
+      <view>问题描述:{{item.orderDescription}}</view>
+      <view>联系电话:{{item.contactTel}}</view>
+      <view>结束时间:{{item.endTime}}</view>
+    </view>
+  </view>
+</view>

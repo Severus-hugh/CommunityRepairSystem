@@ -1,0 +1,31 @@
+/* pages/holiday/holiday.wxss */
+.holidayBlock{
+  background-color: #fff;
+  width: 100%;
+  height: 200rpx;
+  margin: 20rpx 0;
+  display: flex;
+}
+.space{
+  width: 100%;
+  height: 20rpx;
+}
+.holidayText{
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.agree{
+  color: green;
+
+}
+
+.noAgree{
+  color: red;
+
+}
+
+.agreePos{
+  text-align: right;
+  margin-left: 300rpx;
+  margin-top: 80rpx;
+}

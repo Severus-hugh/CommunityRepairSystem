@@ -1,0 +1,57 @@
+/* pages/unlock/unlock.wxss */
+.topBlock{
+  padding: 10rpx;
+  margin-top: 30rpx;
+  margin-left: 150rpx;
+  height: 60rpx;
+  display: flex;
+
+}
+.topBlock-item{
+  text-align: center;
+  border: 1px solid #ffb765;
+  border-radius: 6rpx;
+  overflow: hidden;/*文本溢出显示省略号*/
+  width: 225rpx;
+  color: #ffb765;
+  background-color: #fff;
+}
+.topBlock-item.cell-active{
+  background-color: #ffb765;
+  color: #ffffff;
+}
+.tabText{
+  vertical-align: middle;/*文字垂直居中*/
+}
+.cell-hide{
+  display: none;
+}
+.listBlock{
+  margin-top: 50rpx;
+  margin-left: 100rpx;
+}
+.cList{
+  width: 550rpx;
+  height: 150rpx;
+  background-color: #fff;
+  margin: 10rpx 0;
+  border-radius: 15rpx;
+  display: flex;
+}
+.unlockImg{
+  margin-left: 55rpx;
+  margin-top: 100rpx;
+}
+.unComImg{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  margin: 20rpx 10rpx;
+}
+.imgText{
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+}
+.telText{
+  font-size: 28rpx;
+}

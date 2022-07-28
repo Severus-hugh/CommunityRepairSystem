@@ -1,0 +1,24 @@
+<!--pages/mine/mine.wxml-->
+<view class="main">
+  <view class="topBlock">
+  <!--头像，昵称//点击后跳转到个人资料-->
+    <view>
+      <image class="headimg" src="../../images/head.jpg"></image>
+    </view>
+    <view class="nickText">{{nickname}}</view>
+  </view>
+
+  <view class="kuang">
+    <view class="notice">
+      <view class="noticeText">通知</view> 
+      <image src="../../images/rightarrow.png" class="imgarrow" bindtap="toMessage"></image></view>
+    <view class="notice">
+      <view class="noticeText">投诉</view>
+      <image src="../../images/rightarrow.png" class="imgarrow" bindtap="toComplaint"></image>
+    </view>
+    <view class="notice">
+      <view class="noticeText">退出</view>
+      <image src="../../images/rightarrow.png" class="imgarrow" bindtap="toHome"></image>
+    </view>
+  </view>
+</view>

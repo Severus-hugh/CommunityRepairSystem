@@ -1,0 +1,38 @@
+<!--pages/complaint/complaint.wxml-->
+<view class="topBlock">
+  <view data-id="0" bindtap="changeTabbar" class="topBlock-item {{index == 0 ? 'cell-active' : ''}}">
+    <text class="tabText">我要投诉</text>
+  </view>
+  <view data-id="1" bindtap="changeTabbar" class="topBlock-item {{index == 1 ? 'cell-active' : ''}}">
+    <text class="tabText">已回复</text>
+  </view>
+</view>
+
+<view class="{{index == 0 ? '' : 'cell-hide'}}">
+  <view class="comTitle">请选择想要投诉的订单：</view>
+  <view class="ordercontainer" wx:for="{{ordersList}}" wx:key="index">
+    <view class="orderBlock">
+      <view class="comTextAll">
+        <view class="comText">订单编号:{{item.orderId}}</view>
+        <view class="comText">维修地址:{{item.orderAddress}}</view>
+        <view class="comText">问题描述:{{item.orderDescription}}</view>
+        <view class="comText">维修员ID:{{item.repairmanId}}</view>
+      </view>
+      <view>
+        <image class="arrowimg" data-id="{{index}}" bindtap="commitComp" src="../../images/rightarrow.png"></image>
+      </view>
+    </view>
+    
+  </view>
+</view>
+
+<view class="{{index == 1 ? '' : 'cell-hide'}}">
+  <view class="comBlock" wx:for="{{complaintList}}" wx:key="index">
+    <view class="compBack">
+      <view class="compOrdId">投诉订单编号：{{item.orderId}}</view>
+      <view class="complaintText">投诉：{{item.complaintContent}}</view>
+      <!-- <image class="lineImg" src="../../images/greyline2.png"></image> -->
+      <view class="replyText">回复：{{item.reply}}</view>
+    </view>    
+  </view>
+</view>

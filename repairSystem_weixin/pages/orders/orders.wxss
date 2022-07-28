@@ -1,0 +1,42 @@
+/* pages/orders/orders.wxss */
+.nav{
+  height: 100rpx;
+  white-space: nowrap; /*碰到空格不换行*/
+  padding: 5rpx 0;/*左右5 上下0*/
+}
+.nav_item{
+  padding: 20rpx 45rpx;
+  font-size: 25rpx;
+  display: inline-block;/*显示在一行中*/
+}
+.nav_item.active{
+  border-bottom: 5rpx solid #ffb765;
+}
+.noneIcon{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 300rpx;
+  margin-left: 275rpx;
+}
+.noneText{
+  margin-top: 20rpx;
+  text-align: center;
+  color: #fdc27d;
+  font-size: 40rpx;
+}
+.orderAll{
+  font-size: 24rpx;
+}
+.orderAll_item{
+  width: 90%;
+  margin-left: 37.5rpx;
+  margin-top: 20rpx;
+  background-color: #fcf7e8;
+  height: 280rpx;
+  padding: 20rpx 0;
+  border-radius: 20rpx;
+}
+.item_text{
+  margin-left: 20rpx;
+  
+}

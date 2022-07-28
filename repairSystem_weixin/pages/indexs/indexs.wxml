@@ -1,0 +1,35 @@
+<!--pages/indexs/indexs.wxml-->
+<swiper class="homeSwiper" indicator-dots="true" autoplay="true" circular="true">
+  <swiper-item class="item" wx:for="{{homeSwiperImg}}" wx:key="index">
+    <image class="swiperImg" mode="widthFix" src="{{item}}"></image>
+  </swiper-item>
+</swiper>
+
+<view class="majorPart">
+  <view class="repaired">
+    <navigator url="/pages/repair/repair" open-type="navigate" hover-class="navigator-hover">
+    <image class="majorImg" src="../../images/repaired.png"></image>
+    我要报修
+    </navigator> 
+  </view>
+  <view>
+    <image class="greyline" src="../../images/greyline.png"></image>
+  </view>
+    <view class="repaired">
+      <navigator url="/pages/unlock/unlock" open-type="navigate" hover-class="navigator-hover">
+        <image class="majorImg" src="../../images/unlock.png"></image>开锁换锁
+      </navigator> 
+    </view>
+  </view>
+
+<view class="homeList">
+  <view class="homelistitem"><image class="majorImg" src="../../images/net.png"></image>
+   <view class="tel"> 网络修复 <text user-select="true">16355557787</text></view>
+  </view>
+  <view class="homelistitem"><image class="majorImg" src="../../images/urgent.png"></image>
+    <view class="tel"> 紧急抢修 <text user-select="true">16366667788</text></view> 
+   </view>
+  <view class="homelistitem"><image class="majorImg" src="../../images/tel.png"></image>
+    <view class="tel"> 电话咨询 <text user-select="true">16399997789</text></view>
+  </view>
+</view>

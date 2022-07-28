@@ -1,0 +1,16 @@
+<!--pages/holiday/holiday.wxml-->
+<view wx:for="{{holidayList}}" wx:key="index">
+  <view class="holidayBlock">
+    <view class="holidayText">
+    <view class="space"></view>
+      <view>请假时间:{{item.holidayTime}}</view>
+    <view>请假原因:{{item.holidayReason}}</view>
+    </view>
+    <view class="agreePos">
+      <view class="agree" wx:if="{{item.isAgreed}}">已通过</view>
+      <view class="noAgree"wx:if="{{!item.isAgreed}}">未通过</view>
+    </view>
+    
+  </view>
+  
+</view>

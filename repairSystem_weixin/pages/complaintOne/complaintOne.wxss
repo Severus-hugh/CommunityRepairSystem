@@ -1,0 +1,46 @@
+/* pages/complaintOne/complaintOne.wxss */
+
+.detailBlock{
+  width: 90%;
+  margin-left: 37.5rpx;
+  background-color: #fcf7e8;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+}
+
+.detail{
+  width: 600rpx;
+  height: 50rpx;
+  margin-left: 30rpx;
+  margin-top: 35rpx;
+  display: flex;
+  padding: 5rpx;
+}
+.detail1{
+  margin-top: 35rpx;
+  flex: 3;
+}
+
+.detail2{
+  margin-top: 35rpx;
+  height: 50rpx;
+  flex: 7;
+}
+.queArea{
+  width: 600rpx;
+  height: 350rpx;
+  margin-top: 35rpx;
+  background-color: #ffffff;
+}
+.btn-area{
+  margin-left: 150rpx;
+  margin-top: 400rpx;
+  
+}
+.btn1{
+  background-color: #ffb765;
+}
+.btn2{
+  background-color: #d4d4cf;
+}
+ 

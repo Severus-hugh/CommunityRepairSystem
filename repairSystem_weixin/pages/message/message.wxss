@@ -1,0 +1,36 @@
+/* pages/message/message.wxss */
+.notice{
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #fff;
+  font-size: 40rpx;
+  border-radius: 55rpx;
+  width: 80%;
+  margin-left: 75rpx;
+  margin-top: 20rpx;
+  background-color:#fcf7e8;
+  font-weight: 600;
+}
+.message{
+  width: 90%;
+  height: 300rpx;
+  background-color: #fff;
+  margin: 50rpx 37.5rpx;
+  border-radius: 15rpx;
+  vertical-align: middle;
+  font-size: 35rpx;
+}
+.messageTitle{
+  margin: 30rpx 0;
+  text-align: center;
+}
+.messageContent{
+  font-weight: 300;
+  font-size: 30rpx;
+}
+.messageTime{
+  margin-top: 100rpx;
+  text-align: right;
+  font-size: 25rpx;
+  margin-right: 20rpx;
+}

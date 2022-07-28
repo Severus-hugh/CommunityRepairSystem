@@ -1,0 +1,48 @@
+<!--pages/orders/orders.wxml-->
+<view class="main">
+  <!--首页导航-->
+  <view class="topBlock">
+    <scroll-view class="nav" scroll-x>
+      <view data-index="{{index}}" class="nav_item {{index===currentIndexNav?'active':''}}" 
+      wx:for="{{orderList}}" wx:key="index" bindtap="activeNav">
+        {{item}}<!--要从数据库获取订单数据--> 
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="orderAll">
+    <view class="orderAll_item" wx:for="{{commitedOrder}}" wx:key="{{index}}">
+      <view class="item_text">
+        <view>
+        订单号: {{item.orderId}}
+        </view>
+        <view>
+          地址: {{item.orderAddress}}
+        </view>
+        <view>
+          详细描述: {{item.orderDescription}}
+        </view>
+        <view>
+          报修时间: {{item.createTime}}
+        </view>
+        <view wx:if="{{item.managerId!=null}}">
+          受理人ID: {{item.managerId}}
+        </view>
+        <view wx:if="{{item.acceptTime!=null}}">
+          受理时间: {{item.acceptTime}}
+        </view>
+        <view wx:if="{{item.repairmanId!=null}}">
+          维修员ID: {{item.repairmanId}}
+        </view>
+        <view wx:if="{{item.endTime!=null}}">
+          维修完成时间: {{item.endTime}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <image class="noneIcon" wx:if="{{orderCount==0}}"  src="../../images/noneOrder.png"></image>
+  </view>
+  <view class="noneText"  wx:if="{{orderCount==0}}"> <text class="noneText">暂无订单</text> </view>
+</view>

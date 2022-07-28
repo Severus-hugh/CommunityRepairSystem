@@ -1,0 +1,9 @@
+/* pages/logins/logins.wxss */
+.statusSelect{
+  margin: 50rpx 20rpx;
+  margin-top: 100rpx;
+}
+.residentBtn{
+  margin: 100rpx 0;
+  margin-top: 250rpx;
+}
