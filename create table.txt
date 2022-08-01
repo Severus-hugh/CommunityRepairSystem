@@ -1,0 +1,153 @@
+create table repair_system.community
+(
+    communityId      int auto_increment comment '小区id'
+        primary key,
+    communityName    varchar(20) null comment '小区名称',
+    communityAddress varchar(50) null comment '小区地址',
+    startTime        timestamp   null comment '开始服务时间',
+    finishTime       timestamp   null comment '结束服务时间'
+)
+    comment '小区表';
+
+=========================================================================
+
+create table repair_system.complaint
+(
+    complaintID      int auto_increment comment '投诉编号'
+        primary key,
+    orderId          int                        null comment '被投诉的订单号',
+    complaintContent varchar(200)               null comment '投诉内容',
+    reply            varchar(200) default '未回复' null comment '投诉回复',
+    isEnd            int          default 1     null comment '当前投诉是否已经回复，1未回复，2已回复',
+    residentId       int                        null,
+    repairmanId      int                        null
+)
+    comment '投诉';
+
+=========================================================================
+
+create table repair_system.components
+(
+    componentID      int auto_increment comment '零件编号'
+        primary key,
+    componentName    varchar(20) null comment '零件名',
+    componentCompany varchar(20) null comment '零件产地/厂家',
+    componentField   varchar(6)  null comment '零件所属范围',
+    componentPrice   double      null comment '零件价格'
+)
+    comment '零件表';
+
+=========================================================================
+
+create table repair_system.holiday
+(
+    holidayId     int auto_increment
+        primary key,
+    repairmanId   varchar(8)    null comment '请假维修员编号',
+    holidayTime   varchar(11)   null comment '请假时间',
+    holidayReason varchar(100)  null comment '请假理由',
+    isAgreed      int default 0 null comment '是否同意请假，默认待审核0，同意为1，不同意为2'
+)
+    comment '维修员请假表';
+
+=========================================================================
+
+create table repair_system.manager
+(
+    managerId       int auto_increment comment '管理者id'
+        primary key,
+    managerPassword varchar(16)               not null comment '密码',
+    managerWx       varchar(16)               null comment '管理者微信号',
+    managerName     varchar(10)               not null comment '管理员姓名',
+    managerNickname varchar(30)               null comment '管理者昵称',
+    managerTel      varchar(11)               null comment '管理者手机号',
+    managerMail     varchar(20)               null comment '管理者邮箱',
+    currentStatus   varchar(10) default '管理员' not null comment '身份'
+)
+    comment '管理者和超级管理者';
+
+=========================================================================
+
+create table repair_system.message
+(
+    messageID    int auto_increment comment '编号'
+        primary key,
+    title        varchar(30)  null comment '标题',
+    content      varchar(200) null comment '内容',
+    announceTime varchar(20)  null comment '发布时间'
+)
+    comment '通知公告';
+
+=========================================================================
+
+create table repair_system.orders
+(
+    orderId          int auto_increment comment '订单编号'
+        primary key,
+    orderCommunityId int                                 null comment '待维修设施所在的小区的ID',
+    orderAddress     varchar(30)                         null comment '待维修问题详细地址',
+    questionId       int                                 null comment '待维修问题所属范围',
+    orderDescription varchar(100)                        null comment '问题详细描述',
+    residentId       int                                 null comment '报修人ID',
+    contactTel       varchar(11)                         null comment '维修人员使用的用于和报修人联系的联系方式，可能不是报修人自己的电话，只是用于联系的',
+    createTime       timestamp default CURRENT_TIMESTAMP null,
+    suitableTime     varchar(25)                         null comment '居民选择的合适的维修时间',
+    managerId        int                                 null comment '受理的管理员ID',
+    acceptTime       timestamp                           null comment '受理时间',
+    repairmanId      int                                 null comment '受理的维修员ID',
+    repairTime       timestamp                           null comment '维修员接受时间',
+    endTime          timestamp                           null comment '维修完成时间',
+    currentStatus    int       default 1                 not null comment '当前订单状态
+1--新订单，未受理
+2--已受理并派单
+3--已派单待维修
+4--已维修',
+    orderAttribute   int                                 null comment '订单属性
+1--公共设施
+2--家用设施'
+)
+    comment '订单';
+
+=========================================================================
+
+create table repair_system.questions
+(
+    quesID    int auto_increment comment '维修分类ID'
+        primary key,
+    quesField varchar(20) null comment '维修分类'
+)
+    comment '问题分类';
+
+=========================================================================
+
+create table repair_system.repairman
+(
+    repairId       int auto_increment comment '维修人员ID'
+        primary key,
+    repairName     varchar(10)               not null comment '维修员工姓名',
+    repairNickname varchar(30)               null comment '维修人员微信昵称',
+    currentStatus  varchar(10) default '维修员' null comment '当前身份',
+    repairField    int                       null comment '维修员工作范围',
+    repairTel      varchar(11)               not null comment '维修人员电话',
+    ordersCount    int         default 0     null comment '维修员当前手中正在维修的订单数',
+    workStatus     tinyint(1)  default 1     not null
+)
+    comment '维修人员';
+
+=========================================================================
+
+create table repair_system.resident
+(
+    residentId       int auto_increment comment '小区居民ID'
+        primary key,
+    wxId             varchar(16)          not null comment '微信号',
+    residentName     varchar(30)          not null comment '居民用户名/微信昵称',
+    currentStatus    varchar(10)          not null comment '身份：用户默认为用户',
+    residentTel      varchar(11)          null comment '电话',
+    residentMail     varchar(20)          null comment '邮箱',
+    currentCommunity varchar(8)           not null comment '居民当前居住的小区',
+    isExist          tinyint(1) default 1 not null
+)
+    comment '小区居民/用户';
+
+=========================================================================
